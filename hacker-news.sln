@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{1906
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hacker-news.Api", "backend\hacker-news.Api\hacker-news.Api.csproj", "{D79912A0-949B-40FB-91F9-6DB4179D7476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hacker-news.Api.UnitTests", "backend\hacker-news.Api.UnitTests\hacker-news.Api.UnitTests.csproj", "{2A3FCE4E-4A5E-4261-B1F4-961493D81937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hacker-news.Api.IntegrationTests", "backend\hacker-news.Api.IntegrationTests\hacker-news.Api.IntegrationTests.csproj", "{1531EF98-89D6-466F-A237-972A7695E099}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,18 @@ Global
 		{D79912A0-949B-40FB-91F9-6DB4179D7476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D79912A0-949B-40FB-91F9-6DB4179D7476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D79912A0-949B-40FB-91F9-6DB4179D7476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A3FCE4E-4A5E-4261-B1F4-961493D81937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3FCE4E-4A5E-4261-B1F4-961493D81937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3FCE4E-4A5E-4261-B1F4-961493D81937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3FCE4E-4A5E-4261-B1F4-961493D81937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1531EF98-89D6-466F-A237-972A7695E099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1531EF98-89D6-466F-A237-972A7695E099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1531EF98-89D6-466F-A237-972A7695E099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1531EF98-89D6-466F-A237-972A7695E099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D79912A0-949B-40FB-91F9-6DB4179D7476} = {19062D6E-B252-4FD8-9A0C-9603CEC25CCA}
+		{2A3FCE4E-4A5E-4261-B1F4-961493D81937} = {19062D6E-B252-4FD8-9A0C-9603CEC25CCA}
+		{1531EF98-89D6-466F-A237-972A7695E099} = {19062D6E-B252-4FD8-9A0C-9603CEC25CCA}
 	EndGlobalSection
 EndGlobal
