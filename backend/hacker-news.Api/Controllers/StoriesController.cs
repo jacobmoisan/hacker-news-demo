@@ -14,7 +14,9 @@ namespace hacker_news.Api.Controllers
             _storyService = storyService;
         }
 
-        // GET /stories/latest?pageSize=10&offset=0
+        /// <summary>
+        /// Get latest stories from Hacker News public API https://github.com/HackerNews/API
+        /// </summary>
         [HttpGet("latest")]
         public async Task<IActionResult> GetLatestStories([FromQuery] int pageSize = 10, [FromQuery] int offset = 0)
         {
