@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Search Stories</mat-label>
+    <input matInput [(ngModel)]="searchTerm" placeholder="Type to search..." />
+  </mat-form-field>
+
+  <mat-list>
+    <mat-list-item *ngFor="let story of filteredStories">
+      <a [href]="story.url" target="_blank">{{ story.title }}</a>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-paginator
+    [length]="totalStories"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 20]"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</mat-card>
