@@ -10,7 +10,7 @@ This is just an example application for demonstration purposes of loading from t
 Open up a terminal and run the following command in /frontend/ directory
 * npm install
 
-Go to /backend/ directory in terminal and run this command
+Go to /backend/hacker-news.Api/ directory in terminal and run this command
 * dotnet run
 
 While that is running checkout what port it runs at, and take a look at /frontend/proxy.conf.json file to ensure it matches.  
