@@ -24,3 +24,6 @@ For testing backend go to hacker-news-demo base directory and run:
 
 For testing front end go to /frontend/ directory and run:
 * ng test
+
+For AWS publish  
+* dotnet publish -c Release -r linux-x64 --self-contained false -o ./publish

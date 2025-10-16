@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StoriesService {
-  private latestStoriesUrl = `/stories/latest`;
+  private latestStoriesUrl = `https://dhhxqk9v7k.execute-api.us-east-2.amazonaws.com/stories/latest`;
 
   constructor(private http: HttpClient) {}
 

@@ -1,34 +1,20 @@
-using hacker_news.Api.Services;
-using hacker_news.Api.Repositories;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-public class Program
+namespace hacker_news.Api
 {
-    public static void Main(string[] args)
+    public class Program
     {
-
-        var builder = WebApplication.CreateBuilder(args);
-
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        builder.Services.AddControllers();
-        builder.Services.AddHttpClient();
-        builder.Services.AddMemoryCache();
-
-        builder.Services.AddScoped<IStoryService, StoryService>();
-        builder.Services.AddScoped<IStoryApiClient, StoryApiClient>();
-        builder.Services.AddScoped<IStoryRepository, StoryRepository>();
-
-        var app = builder.Build();
-
-        if (app.Environment.IsDevelopment())
+        public static void Main(string[] args)
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            CreateHostBuilder(args).Build().Run();
         }
 
-        app.UseHttpsRedirection();
-        app.MapControllers();
-
-        app.Run();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }
