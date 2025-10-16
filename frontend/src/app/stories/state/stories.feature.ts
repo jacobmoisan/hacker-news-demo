@@ -23,14 +23,12 @@ export interface StoriesState {
   stories: Story[];
   loading: boolean;
   error: any;
-  totalStories: number;
 }
 
 const initialState: StoriesState = {
   stories: [],
   loading: false,
   error: null,
-  totalStories: 0
 };
 
 
@@ -45,8 +43,7 @@ const storiesReducer = createReducer(
     ...state,
     stories,
     loading: false,
-    error: null,
-    totalStories: stories.length
+    error: null
   })),
   on(loadStoriesFailure, (state, { error }) => ({
     ...state,
@@ -69,4 +66,8 @@ export const selectStories = createSelector(
 export const selectLoading = createSelector(
   storiesFeature.selectLoading,
   (loading) => loading
+);
+export const selectError = createSelector(
+  storiesFeature.selectError,
+  (error) => error
 );

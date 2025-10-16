@@ -89,5 +89,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@schematics/angular"
+    ]
   }
 }

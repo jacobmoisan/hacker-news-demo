@@ -5,7 +5,6 @@ import { StoriesEffects } from './stories.effects';
 import { StoriesService } from '../stories.service';
 import { loadStories, loadStoriesSuccess, loadStoriesFailure } from './stories.feature';
 import { Story } from '../story.model';
-import { Actions } from '@ngrx/effects';
 
 describe('StoriesEffects', () => {
   let actions$: Observable<any>;

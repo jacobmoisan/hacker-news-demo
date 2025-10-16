@@ -1,10 +1,15 @@
-<mat-card>
+<section class="stories-container">
   <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>Search Stories</mat-label>
     <input matInput [(ngModel)]="searchTerm" placeholder="Type to search..." />
   </mat-form-field>
 
-  @if (loading()) {
+  @if (error()) {
+    <div class="error-state">
+      <p>Error occurred while loading stories</p>
+      <button mat-raised-button color="primary" (click)="loadStories()">Retry</button>
+    </div>
+  } @else if (loading()) {
     <div class="loading-overlay">Loading...</div>
   } @else {
     <mat-list>
@@ -21,9 +26,10 @@
   }
 
   <mat-paginator
+    [class.invisible]="loading() || error()"
     [length]="500"
     [pageSize]="pageSize"
-    [pageSizeOptions]="[5, 10, 20]"
+    [pageSizeOptions]="[5, 10, 15, 20]"
     (page)="onPageChange($event)">
   </mat-paginator>
-</mat-card>
+</section>
