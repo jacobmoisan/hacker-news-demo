@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { storiesFeature } from './stories/state/stories.feature';
+import { StoriesEffects } from './stories/state/stories.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(withFetch()),
     provideStore(),
-    provideEffects(),
+    provideEffects(StoriesEffects),
     provideState(storiesFeature),
 ]
 };

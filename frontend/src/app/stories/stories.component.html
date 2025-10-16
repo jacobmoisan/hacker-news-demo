@@ -4,14 +4,24 @@
     <input matInput [(ngModel)]="searchTerm" placeholder="Type to search..." />
   </mat-form-field>
 
-  <mat-list>
-    <mat-list-item *ngFor="let story of filteredStories">
-      <a [href]="story.url" target="_blank">{{ story.title }}</a>
-    </mat-list-item>
-  </mat-list>
+  @if (loading()) {
+    <div class="loading-overlay">Loading...</div>
+  } @else {
+    <mat-list>
+      @for (story of filteredStories; track story.id) {
+        <mat-list-item>
+          @if (story.url) {
+            <a [href]="story.url" target="_blank">{{ story.title }}</a>
+          } @else {
+            <span>{{ story.title }}</span>
+          }
+        </mat-list-item>
+      }
+    </mat-list>
+  }
 
   <mat-paginator
-    [length]="totalStories"
+    [length]="500"
     [pageSize]="pageSize"
     [pageSizeOptions]="[5, 10, 20]"
     (page)="onPageChange($event)">

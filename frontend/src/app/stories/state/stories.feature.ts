@@ -5,7 +5,7 @@ import { Story } from '../story.model';
 
 export const loadStories = createAction(
   '[Stories] Load Stories',
-  props<{ pageSize: number; offset: number; searchTerm?: string }>()
+  props<{ pageSize: number; offset: number; }>()
 );
 
 export const loadStoriesSuccess = createAction(
@@ -69,9 +69,4 @@ export const selectStories = createSelector(
 export const selectLoading = createSelector(
   storiesFeature.selectLoading,
   (loading) => loading
-);
-
-export const selectTotalStories = createSelector(
-  storiesFeature.selectTotalStories,
-  (totalStories) => totalStories
 );

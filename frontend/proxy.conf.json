@@ -1,0 +1,8 @@
+{
+  "/stories": {
+    "target": "http://localhost:5105",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

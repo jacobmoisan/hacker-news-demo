@@ -9,7 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { Story } from './story.model';
 import { Store } from '@ngrx/store';
-import { loadStories, selectStories, selectLoading, selectTotalStories } from './state/stories.feature';
+import { loadStories, selectStories, selectLoading } from './state/stories.feature';
 
 @Component({
   selector: 'hacker-news-stories',
@@ -32,7 +32,6 @@ export class StoriesComponent {
 
   stories = this.store.selectSignal(selectStories);
   loading = this.store.selectSignal(selectLoading);
-  totalStories = this.store.selectSignal(selectTotalStories);
 
   searchTerm = '';
   pageSize = 10;
@@ -45,8 +44,7 @@ export class StoriesComponent {
   loadStories() {
     this.store.dispatch(loadStories({
       pageSize: this.pageSize,
-      offset: this.pageIndex * this.pageSize,
-      searchTerm: this.searchTerm
+      offset: this.pageIndex * this.pageSize
     }));
   }
 

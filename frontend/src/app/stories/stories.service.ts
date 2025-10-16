@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StoriesService {
-  private API_BASE_URL = 'http://localhost:5105';
-  private latestStoriesUrl = `${this.API_BASE_URL}/stories/latest`;
+  private latestStoriesUrl = `/stories/latest`;
 
   constructor(private http: HttpClient) {}
 
